@@ -12,7 +12,17 @@
 
     </section>
   <header class="toolbar">
-    <img src="/Assest/Rut_Logo.png">
+    <img id="image-container"></img>
+    <script>
+        const imgElement = document.createElement("img");
+        imgElement.src = "/Assest/Rut_Logo.png";
+        imgElement.alt = "Dynamic Image";
+        imgElement.width = 400;
+        imgElement.height = 300;
+      
+        document.getElementById("image-container").appendChild(imgElement);
+      </script>
+
     <h1>Welcome</h1>
   </header>
 
