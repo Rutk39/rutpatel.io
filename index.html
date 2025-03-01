@@ -15,7 +15,7 @@
     <div id="image-container"></div>
     <script>
         const imgElement = document.createElement("img");
-        imgElement.src = "/Assest/Rut_Logo.png";
+        imgElement.src = "<%= asset_path('Rut_Logo.png') %>";  <!-- Rails helper -->
         imgElement.alt = "Dynamic Image";
         imgElement.width = 400;
         imgElement.height = 300;
