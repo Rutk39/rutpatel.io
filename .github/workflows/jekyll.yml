@@ -30,6 +30,8 @@ jobs:
           node-version: '16'
       - name: Install dependencies
         run: npm install
+      - name: Install babel-loader
+        run: npm install babel-loader
       - name: Build React components
         run: npm run build
       - name: Setup Pages
