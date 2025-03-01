@@ -1,0 +1,10 @@
+@media (max-width: 100%) {
+    body {
+      background-color: lightgreen;
+    }
+  
+    h1 {
+      font-size: 1.5em;
+    }
+  }
+  
