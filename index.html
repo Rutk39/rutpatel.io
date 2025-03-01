@@ -15,15 +15,13 @@
     <div id="image-container"></div>
     <script>
         const imgElement = document.createElement("img");
-        imgElement.src = "<%= asset_path('Rut_Logo.png') %>";  <!-- Rails helper -->
+        imgElement.src = "assets/Rut_Logo.png";
         imgElement.alt = "Dynamic Image";
         imgElement.width = 400;
         imgElement.height = 300;
       
         document.getElementById("image-container").appendChild(imgElement);
       </script>
-
-    <h1>Welcome</h1>
   </header>
 
   <main>
