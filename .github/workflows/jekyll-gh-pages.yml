@@ -22,21 +22,30 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          source: ./
-          destination: ./_site
-      - name: Upload artifact
+          ruby-version: '3.1'  # Change according to your Jekyll version
+          bundler-cache: true
+
+      - name: Install Jekyll and dependencies
+        run: |
+          bundle install
+
+      - name: Build Jekyll site
+        run: |
+          bundle exec jekyll build --source ./ --destination ./_site
+
+      - name: Upload build artifacts
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_site
 
   # Deployment job
   deploy:
